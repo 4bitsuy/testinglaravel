@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/holamundo', function(){
+    echo "Esto es una simple prueba!!";
+});
+
+Route::any("/cualquiercosa", function(){
+echo 'La ruta /cualquiercosa asociada a cualquier verbo';
+});
