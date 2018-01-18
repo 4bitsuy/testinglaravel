@@ -22,3 +22,7 @@ Route::get('/holamundo', function(){
 Route::any("/cualquiercosa", function(){
 echo 'La ruta /cualquiercosa asociada a cualquier verbo';
 });
+
+Route::get('categoria/{id}','CategoriasController@ver');
+
+Route::post('recibir','CategoriasController@recibirPost');
