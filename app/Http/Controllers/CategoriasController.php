@@ -10,11 +10,4 @@ class CategoriasController extends Controller {
         return view ('categoria', ['id' => $id]);
     }
 
-    // usando la funcion Request...
-    public function recibirPost(Request $request){
-        echo $request->path();
-        echo "<br>";
-        echo $request->url();
-    }
-
 }

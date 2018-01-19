@@ -19,10 +19,17 @@ Route::get('/holamundo', function(){
     echo "Esto es una simple prueba!!";
 });
 
-Route::any("/cualquiercosa", function(){
-echo 'La ruta /cualquiercosa asociada a cualquier verbo';
+Route::post("/post", function(){
+echo 'La ruta /post asociada a el post verbo';
 });
 
 Route::get('categoria/{id}','CategoriasController@ver');
 
-Route::post('recibir','CategoriasController@recibirPost');
+Route::post('recibir/{id}','FirstController@editar');
+
+Route::get('articulos','ArticulosController@todos');
+
+Route::match(['get', 'post'], 'input', 'TestRequestController@recibir');
+
+Route::get('form/crear','FirstController@testFormulario');
+Route::post('form', 'FirstController@store');
